@@ -33,3 +33,7 @@
 
 # VS Code Settings
 .vscode/
+
+# Other Filesystem Settings Files
+.DS_Store
+*/.DS_Store
