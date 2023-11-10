@@ -1,0 +1,55 @@
+
+Starting Location: AlphaCentauri
+AlphaCentauri -> Faerun -> Tristram -> Norrath -> Snowdin -> Tambi -> Straylight -> Arbre = 211
+
+Starting Location: Arbre
+Arbre -> Tristram -> Norrath -> Snowdin -> Tambi -> AlphaCentauri -> Faerun -> Straylight = 240
+
+Starting Location: Faerun
+Faerun -> AlphaCentauri -> Tambi -> Snowdin -> Norrath -> Tristram -> Arbre -> Straylight = 117
+
+Starting Location: Norrath
+Norrath -> Tristram -> Arbre -> Straylight -> Tambi -> AlphaCentauri -> Faerun -> Snowdin = 193
+
+Starting Location: Snowdin
+Snowdin -> Norrath -> Tristram -> Arbre -> Straylight -> Tambi -> AlphaCentauri -> Faerun = 130
+
+Starting Location: Straylight
+Straylight -> Arbre -> Tristram -> Norrath -> Snowdin -> Tambi -> AlphaCentauri -> Faerun = 117
+
+Starting Location: Tambi
+Tambi -> AlphaCentauri -> Faerun -> Tristram -> Norrath -> Snowdin -> Arbre -> Straylight = 212
+
+Starting Location: Tristram
+Tristram -> Norrath -> Snowdin -> Tambi -> AlphaCentauri -> Faerun -> Straylight -> Arbre = 240
+
+Faerun -> AlphaCentauri -> Tambi -> Snowdin -> Norrath -> Tristram -> Arbre -> Straylight = 117
+Part 1 -> The difference between code characters and memory characters is 117
+
+Starting Location: AlphaCentauri
+AlphaCentauri -> Norrath -> Faerun -> Arbre -> Tambi -> Straylight -> Tristram -> Snowdin = 867
+
+Starting Location: Arbre
+Arbre -> Faerun -> Norrath -> AlphaCentauri -> Straylight -> Tristram -> Snowdin -> Tambi = 818
+
+Starting Location: Faerun
+Faerun -> Arbre -> Tambi -> Norrath -> AlphaCentauri -> Straylight -> Tristram -> Snowdin = 833
+
+Starting Location: Norrath
+Norrath -> Faerun -> Arbre -> Tambi -> Straylight -> Tristram -> Snowdin -> AlphaCentauri = 815
+
+Starting Location: Snowdin
+Snowdin -> Tristram -> Straylight -> Faerun -> Arbre -> Tambi -> Norrath -> AlphaCentauri = 863
+
+Starting Location: Straylight
+Straylight -> Faerun -> Arbre -> Tambi -> Norrath -> AlphaCentauri -> Snowdin -> Tristram = 822
+
+Starting Location: Tambi
+Tambi -> Arbre -> Faerun -> Norrath -> AlphaCentauri -> Straylight -> Tristram -> Snowdin = 909
+
+Starting Location: Tristram
+Tristram -> Straylight -> Faerun -> Arbre -> Tambi -> Norrath -> AlphaCentauri -> Snowdin = 842
+
+Tambi -> Arbre -> Faerun -> Norrath -> AlphaCentauri -> Straylight -> Tristram -> Snowdin = 909
+Part 2 -> The difference between code characters and memory characters is 909
+Press any key to continue . . . 
