@@ -2,14 +2,16 @@
 
 The 'Advent of Code' is an Advent calendar for programmers -- counting down the days to Christmas through coding problems. Every year, I aim to complete the Advent of Code challenges while learning a new programming language. 
 
-With the 2017 version of the challenge, I was learning `Python`, and in 2018 I was learning `R`.
+Here's the index of Advent challenges I have started in the past:
 
-With the 2015 edition, I am currently learning `C++`. 
-
-And with the latest 2022 iteration, I'm aiming to learn `Javascript`.
-
-Hopefully in the future, I can work with `Rust`, `C#`, `Julia`, and `Lua`.
-
-So that's how the challenge works. Each year is a different branch in this repository, and a different language that I've learned. And each branch is labelled with the corresponding year and the language that was used.
-
-Last Updated: 2022-12-07 00:00
+Year | Language     | Status
+---- | ------------ | ---------------
+2015 | `C++`        | 🟡&nbsp;&nbsp;&nbsp;&nbsp;In Progress
+2016 | `Java`       | 🔴&nbsp;&nbsp;&nbsp;&nbsp;Not Started
+2017 | `Python`     | 🔴&nbsp;&nbsp;&nbsp;&nbsp;Not Started
+2018 | `R`          | 🔴&nbsp;&nbsp;&nbsp;&nbsp;Not Started
+2019 | `JavaScript` | 🔴&nbsp;&nbsp;&nbsp;&nbsp;Not Started
+2020 | `-`          | 🔴&nbsp;&nbsp;&nbsp;&nbsp;Not Started
+2021 | `-`          | 🔴&nbsp;&nbsp;&nbsp;&nbsp;Not Started
+2022 | `-`          | 🔴&nbsp;&nbsp;&nbsp;&nbsp;Not Started
+2023 | `-`          | 🔴&nbsp;&nbsp;&nbsp;&nbsp;Not Started
