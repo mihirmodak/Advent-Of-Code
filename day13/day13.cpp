@@ -1,29 +1,147 @@
-/*
- * Code generated using Google Bard
- * For Advent of Code Day 13
- * Available at
- * https://g.co/bard/share/502076908afa
- */
-
 #include <iostream>
-#include <algorithm>
-#include <vector>
 #include <fstream>
-#include <sstream>
+#include <vector>
+#include <map>
 #include <regex>
 
 using namespace std;
 
-struct Person {
-  string name;
-  vector<int> happiness_units;
+// ---------- OBJECTS ----------
+struct Person
+{
+    string name;
+    map<string, int> happiness;
+
+    Person(string name) : name(name), happiness() {} // Allow initializing Person with an empty happiness map
+    Person(string name, map<string, int> happiness) : name(name), happiness(happiness) {}
+
+    // Overloaded operator< for comparing Person objects based on name
+    bool operator<(const Person &other) const
+    {
+        return name < other.name;
+    }
 };
 
-bool compare_persons_by_happiness(Person p1, Person p2) {
-  return p1.happiness_units.size() > p2.happiness_units.size();
+// ---------- UTILITY FUNCTIONS ----------
+
+template <typename T>
+void print(T t)
+{
+    cout << t << endl;
 }
 
-vector<Person> parse_data(ifstream& input_file) {
+template <typename T>
+void print(vector<T> v)
+{
+
+    if (v.size() == 0)
+    {
+        cout << "[]" << endl;
+    }
+    else
+    {
+        cout << "[" << v[0];
+        for (size_t i = 1; i < v.size(); i++)
+        {
+            cout << ", " << v[i];
+        }
+        cout << "]" << endl;
+    }
+}
+void print(vector<Person> v)
+{
+
+    if (v.size() == 0)
+    {
+        cout << "[]" << endl;
+    }
+    else
+    {
+        cout << "[" << v[0].name;
+        for (size_t i = 1; i < v.size(); i++)
+        {
+            cout << ", " << v[i].name;
+        }
+        cout << "]" << endl;
+    }
+}
+
+template <typename T1, typename T2>
+void print(map<T1, T2> m, bool separate_variables = false)
+{
+
+    if (m.size() == 0)
+    {
+        cout << "{}" << endl;
+    }
+    else
+    {
+        if (separate_variables)
+        {
+            cout << "{"
+                 << "\n  ";
+        }
+        else
+        {
+            cout << "{"
+                 << "";
+        }
+
+        bool first_elem = true;
+
+        for (const std::pair<T1, T2> &p : m)
+        {
+
+            if (separate_variables)
+            {
+                cout << (first_elem ? "" : ",\n  ");
+                cout << p.first << ": " << p.second;
+            }
+            else
+            {
+                cout << (first_elem ? "" : ", ");
+                cout << p.first << ": " << p.second;
+            }
+
+            first_elem = false;
+        }
+
+        if (separate_variables)
+        {
+            cout << "\n}" << endl;
+        }
+        else
+        {
+            cout << "}" << endl;
+        }
+    }
+}
+
+// ---------- HELPER FUNCTIONS ----------
+
+/*
+ * Finds a Person with name person_name in a vector of Person objects
+ * If the person exists, retuns an iterator to that specific Person object
+ * If the person does not exist, returns an iterator to the end of the vector
+ */
+vector<Person>::iterator contains_person(vector<Person> &people, string &person_name)
+{
+    for (auto it = people.begin(); it != people.end(); ++it)
+    {
+        if (it->name == person_name)
+        {
+            return it;
+        }
+    }
+    return people.end();
+}
+
+/*
+ * Reads in the data file and generates a vector of Person objects
+ * Each person object contains a name and a map of the relative happinesses with every other person
+ */
+vector<Person> parse_data(ifstream &inputFile)
+{
 
     vector<Person> people;
 
@@ -31,95 +149,123 @@ vector<Person> parse_data(ifstream& input_file) {
 
     // Read each line of the text file
     string line;
-    while (getline(input_file, line)) {
+    while (getline(inputFile, line))
+    {
 
+        // Extract out all the fields
         smatch match;
-        string name1, name2, gain;
+        string name1, name2;
         int happiness;
-        if (regex_match(line, match, line_pattern)) {
+        if (regex_search(line, match, line_pattern))
+        {
             // Extract the name of the person, the happiness units they gain or lose, and the name of the person they sit next to
             name1 = match[1];
-            gain= match[2];
-            happiness = stoi(match[3]);
             name2 = match[4];
-        }
 
-        // Find the people in the vector
-        Person* person1 = nullptr;
-        Person* person2 = nullptr;
-        for (Person& person : people) {
-            if (person.name == name1) {
-                person1 = &person;
-            } else if (person.name == name2) {
-                person2 = &person;
+            if (match[2] == "gain")
+            { // match[2] is "gain" or "lose"
+                happiness = stoi(match[3]);
+            }
+            else
+            {
+                happiness = -stoi(match[3]);
             }
         }
 
-        // If the people are not in the vector, create them
-        if (person1 == nullptr) {
-        people.push_back(Person{name1, vector<int>()});
-        person1 = &people.back();
-        }
-        if (person2 == nullptr) {
-        people.push_back(Person{name2, vector<int>()});
-        person2 = &people.back();
-        }
+        auto it = contains_person(people, name1);
 
-        // Add the happiness units to the vectors
-        person1->happiness_units.push_back(happiness);
-        person2->happiness_units.push_back(-happiness);
+        if (it == people.end())
+        { // if name1 is not found in `people`
+            map<string, int> happinessAssociation = {{name2, happiness}};
+            people.push_back(Person{name1, happinessAssociation});
+            it = people.end() - 1;
+        }
+        else
+        {
+            it->happiness.insert({name2, happiness});
+        }
     }
 
     return people;
-
 }
 
-int main() {
-    // Read the data from the text file
-    ifstream input_file("/Users/mihir/Library/CloudStorage/OneDrive-Personal/Programs/Advent of Code/Advent of Code 2015/day13/data.txt");
+/*
+ * Takes a permutation, and returns the total happiness in that permutation
+ */
+int calculate_happiness(vector<Person> permutation)
+{
+    int totalHappiness = 0;
+    for (size_t i = 0; i < permutation.size(); i++) // f
+    {
+        int leftHappiness = 0;
+        if (i > 0)
+        {
+            leftHappiness = permutation[i].happiness[permutation[i - 1].name];
+        }
+        else
+        {
+            leftHappiness = permutation[i].happiness[permutation[permutation.size() - 1].name];
+        }
 
-    if (!input_file.is_open()) {
+        int rightHappiness = 0;
+        if (i < permutation.size() - 1)
+        {
+            rightHappiness = permutation[i].happiness[permutation[i + 1].name];
+        }
+        else
+        {
+            rightHappiness = permutation[i].happiness[permutation[0].name];
+        }
+
+        totalHappiness += leftHappiness + rightHappiness;
+    }
+    return totalHappiness;
+}
+
+/*
+ * Takes the vector of people and goes through all permutations one by one
+ * Calculates the Happiness change for each permutation
+ * Returns the one with the maximum happiness change
+ */
+vector<Person> get_best_permutation(vector<Person> people)
+{
+    int maxHappiness = -1e9;
+    std::vector<Person> optimalPermutation;
+
+    // Generate all permutations
+    next_permutation(people.begin(), people.end());
+
+    // Evaluate each permutation and keep track of the best one
+    do
+    {
+        int currentHappiness = calculate_happiness(people);
+        if (currentHappiness > maxHappiness)
+        {
+            maxHappiness = currentHappiness;
+            optimalPermutation = people;
+        }
+    } while (next_permutation(people.begin(), people.end()));
+
+    cout << "The optimal happiness is " << to_string(maxHappiness) << endl;
+
+    return optimalPermutation;
+}
+
+int main()
+{
+
+    ifstream inputFile("/Users/mihir/Library/CloudStorage/OneDrive-Personal/Programs/Advent of Code/Advent of Code 2015/day13/data.txt");
+
+    if (!inputFile.is_open())
+    {
         cout << "Error: Could not open the input file" << endl;
         return 1;
     }
 
-    vector<Person> people = parse_data(input_file);
+    vector<Person> people = parse_data(inputFile);
+    vector<Person> best = get_best_permutation(people);
 
-    // Sort the people by the number of happiness units they can gain
-    sort(people.begin(), people.end(), compare_persons_by_happiness);
-
-    // Find the optimal arrangement of people
-    vector<Person> arrangement;
-    int max_happiness = 0;
-    while (people.size() > 0) {
-        // Get the person with the most happiness units
-        Person person = people.back();
-        people.pop_back();
-
-        // Find the best place to seat the person
-        int best_happiness = 0;
-        int best_index = -1;
-        for (size_t i = 0; i < people.size(); i++) {
-            int happiness = person.happiness_units[i];
-            if (happiness > best_happiness) {
-                best_happiness = happiness;
-                best_index = i;
-            }
-        }
-
-        // Seat the person
-        arrangement.insert(arrangement.begin() + best_index + 1, person);
-
-        // Update the max happiness
-        max_happiness += best_happiness;
-    }
-
-    // Print the optimal arrangement of people and the total gain of happiness units
-    cout << "Optimal arrangement of people:" << endl;
-    for (Person person : arrangement) {
-    cout << person.name << endl;
-    }
-    cout << "Total gain of happiness units: " << max_happiness << endl;
+    print(best);
 
     return 0;
 }
