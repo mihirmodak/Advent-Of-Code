@@ -52,7 +52,7 @@ int sumNumbersWithoutRed(const nlohmann::json& j) {
 
 int main() {
 
-    std::ifstream json_file ("../data.json");
+    std::ifstream json_file ("/Users/mihir/Library/CloudStorage/OneDrive-Personal/Programs/Advent of Code/Advent of Code 2015/day12/data.json");
 
     if (!json_file.is_open()) {
         std::cerr << "Error opening JSON file." << std::endl;
@@ -77,7 +77,6 @@ int main() {
     std::cout << "The sum of all the numbers in the JSON file without objects containing 'red' is " << total_without_red << "." << std::endl;
 
 
-    system("read -p \"Press enter to continue . . . \"");
     return 0;
 
 }

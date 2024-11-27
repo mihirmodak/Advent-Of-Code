@@ -6,7 +6,7 @@
 
 using namespace std;
 
-string hash_md5(string msg) {
+string hash_md5(const string & msg) {
     unsigned char hashed[MD5_DIGEST_LENGTH];
     MD5((const unsigned char*)msg.c_str(), msg.size(), hashed);
 
@@ -69,6 +69,5 @@ int main() {
 
     data.close();
 
-    system("pause");
     return 0;
 }

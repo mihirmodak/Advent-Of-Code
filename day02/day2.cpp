@@ -16,7 +16,7 @@ int part1(ifstream & data) {
         getline(linestream, wstr, 'x');
         getline(linestream, hstr, 'x');
 
-        int l =stoi(lstr); int w = stoi(wstr); int h = stoi(hstr);
+        int l = stoi(lstr); int w = stoi(wstr); int h = stoi(hstr);
 
         int lw = l*w;
         int lh = l*h;
@@ -46,6 +46,11 @@ int part2(ifstream & data) {
 
         int l = stoi(lstr); int w = stoi(wstr); int h = stoi(hstr);
 
+
+        // find the smallest perimeter by
+        // - adding up all 3 measurements
+        // - and subtracting the longest one
+        // - then doubling the result
         int smallest_perim = 2* (l + w + h - max( max(l,w), h ));
         int bow = l*w*h;
 
@@ -73,7 +78,6 @@ int main() {
 
     data.close();
 
-    system("pause");
     return 0;
 }
 

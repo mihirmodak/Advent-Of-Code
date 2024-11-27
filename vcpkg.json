@@ -1,0 +1,18 @@
+{
+  "name" : "advent-of-code",
+  "version-string" : "1.0.0",
+  "builtin-baseline" : "5e5d0e1cd7785623065e77eff011afdeec1a3574",
+  "dependencies" : [ {
+    "name" : "vcpkg-cmake-config",
+    "version>=" : "2024-05-23"
+  }, {
+    "name" : "vcpkg-cmake-get-vars",
+    "version>=" : "2024-09-22"
+  }, {
+    "name" : "vcpkg-cmake",
+    "version>=" : "2024-04-23"
+  }, {
+    "name" : "openssl",
+    "version>=" : "3.4.0"
+  } ]
+}

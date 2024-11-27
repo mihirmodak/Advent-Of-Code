@@ -37,3 +37,6 @@
 # Other Filesystem Settings Files
 .DS_Store
 */.DS_Store
+
+# CMake files
+cmake-build-*

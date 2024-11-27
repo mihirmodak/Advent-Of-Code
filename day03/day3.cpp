@@ -55,8 +55,8 @@ class Area {
             if ( itr == houses.end() ) {
                 houses.insert(map<vector<int>, int>::value_type(c.coords, 1)); // set the new value to 1
             } else {
-                    // increment the value (itr->second) by 1
-                    itr->second++;
+                // increment the value (itr->second) by 1
+                itr->second++;
             }
         }
         int calculate_multiples() {
@@ -150,6 +150,5 @@ int main() {
 
     data.close();
 
-    system("pause");
     return 0;
 }
