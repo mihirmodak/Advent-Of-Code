@@ -100,7 +100,6 @@ int main() {
     }
 
     data.close();
-
-    system("pause");
+    
     return 0;
 }
