@@ -1,6 +1,6 @@
 # The Advent of Code
 
-The 'Advent of Code' is an Advent calendar for programmers -- counting down the days to Christmas through coding problems. Every year, I aim to complete the Advent of Code challenges while learning a new programming language. 
+The 'Advent of Code' is an Advent calendar for programmers -- counting down the days to Christmas through coding problems. Every year, I aim to complete the Advent of Code challenges while learning a new programming language. Every challenge set (i.e. every year's challenges) are in a separate branch in this repository.
 
 Here's the index of Advent challenges I have started in the past:
 
