@@ -34,6 +34,9 @@
 # VS Code Settings
 .vscode/
 
+# IntelliJ Settings
+.idea/
+
 # Other Filesystem Settings Files
 .DS_Store
 */.DS_Store
