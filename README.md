@@ -1,4 +1,12 @@
 ![Banner](https://cdn.thenewstack.io/media/2021/12/521cd034-advent-of-code-2021.jpg)
+<!-- ![Banner](./assets/banner.png) -->
+
+# Advent of Code
+
+![Last Commit](https://img.shields.io/github/last-commit/mihirmodak/Advent-Of-Code)
+![Commits](https://img.shields.io/github/commit-activity/t/mihirmodak/Advent-Of-Code/2015)
+
+
 
 [Advent of Code](https://adventofcode.com) is an annual series of programming puzzles released daily from December 1–25. The difficulty ramps up as the month progresses, covering topics from string parsing and graph traversal to dynamic programming and simulation.
 
