@@ -35,4 +35,12 @@ To browse a specific year, switch to its branch or click the year link in the ta
 
 ## Running the Code
 
-View the READMEs of individual branches for details on building and running the code.
+These solutions use [CMake](https://cmake.org). From the root of the `2015` branch:
+
+```bash
+cmake -S . -B build
+cmake --build build
+./build/dayXX/dayXX   # replace XX with the day number, e.g. day01
+```
+
+Each binary reads its puzzle input from `data.txt` in the corresponding day folder and prints the answers for both parts.
