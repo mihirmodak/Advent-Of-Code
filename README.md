@@ -19,15 +19,15 @@ Year | Language | Status
 [2015](https://github.com/mihirmodak/Advent-Of-Code/tree/2015) | `C/C++` | 🟡&nbsp;&nbsp;In Progress
 2016 | `Java` | 🔴&nbsp;&nbsp;Not Started
 2017 | `Python` | 🔴&nbsp;&nbsp;Not Started
-2018 | `JavaScript` | 🔴&nbsp;&nbsp;Not Started
+2018 | `TypeScript` | 🔴&nbsp;&nbsp;Not Started
 2019 | `Rust` | 🔴&nbsp;&nbsp;Not Started
-2020 | `TypeScript` | 🔴&nbsp;&nbsp;Not Started
-2021 | `C#` | 🔴&nbsp;&nbsp;Not Started
-2022 | `Go` | 🔴&nbsp;&nbsp;Not Started
-2023 | TBD | 🔴&nbsp;&nbsp;Not Started
-2024 | TBD | 🔴&nbsp;&nbsp;Not Started
-2025 | TBD | 🔴&nbsp;&nbsp;Not Started
-2026 | TBD | 🔴&nbsp;&nbsp;Not Started
+2020 | `C#` | 🔴&nbsp;&nbsp;Not Started
+2021 | `Go` | 🔴&nbsp;&nbsp;Not Started
+2022 | `Haskell` | 🔴&nbsp;&nbsp;Not Started
+2023 | `Ruby` | 🔴&nbsp;&nbsp;Not Started
+2024 | `Elixir` | 🔴&nbsp;&nbsp;Not Started
+2025 | `RLang` | 🔴&nbsp;&nbsp;Not Started
+2026 | `Julia` | 🔴&nbsp;&nbsp;Not Started
 2027 | TBD | 🔴&nbsp;&nbsp;Not Started
 
 **Status legend:** 🟢&nbsp;Complete &nbsp;|&nbsp; 🟡&nbsp;In Progress &nbsp;|&nbsp; 🔴&nbsp;Not Started
