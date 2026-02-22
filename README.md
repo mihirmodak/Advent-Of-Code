@@ -4,8 +4,9 @@
 
 ![Last Commit](https://img.shields.io/github/last-commit/mihirmodak/Advent-Of-Code)
 
-![Commits (2015)](https://img.shields.io/github/commit-activity/t/mihirmodak/Advent-Of-Code/main)
-![Last Commit (2015)](https://img.shields.io/github/last-commit/mihirmodak/Advent-Of-Code/2015)
+![GitHub commit activity (2015)](https://img.shields.io/github/commit-activity/t/mihirmodak/Advent-Of-Code/2015?label=Commits%20(2015))
+![GitHub last commit (2015)](https://img.shields.io/github/last-commit/mihirmodak/Advent-Of-Code/2015?label=Last%20Commit%20(2015))
+
 
 
 
