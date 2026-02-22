@@ -4,6 +4,10 @@
 
 ![Last Commit](https://img.shields.io/github/last-commit/mihirmodak/Advent-Of-Code)
 
+![Commits (2015)](https://img.shields.io/github/commit-activity/t/mihirmodak/Advent-Of-Code/main)
+![Last Commit (2015)](https://img.shields.io/github/last-commit/mihirmodak/Advent-Of-Code/2015)
+
+
 
 [Advent of Code](https://adventofcode.com) is an annual series of programming puzzles released daily from December 1–25. The difficulty ramps up as the month progresses, covering topics from string parsing and graph traversal to dynamic programming and simulation.
 
