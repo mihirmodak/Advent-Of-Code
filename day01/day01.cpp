@@ -70,6 +70,8 @@ int part2() {
         }
     }
 
+    file.close();
+
     return char_count;
 }
 
