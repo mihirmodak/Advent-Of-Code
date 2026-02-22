@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
 
-char get_next_char(std::ifstream& file) {
+char get_next_char(std::ifstream &file) {
     if (!file.is_open()) {
         throw std::runtime_error("File not open");
     }
@@ -34,7 +34,6 @@ int part1() {
         } else {
             throw std::runtime_error("Invalid character in input: " + std::string(1, ch) + " at character position " + std::to_string(char_count));
         }
-
     }
 
     file.close();
