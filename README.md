@@ -27,3 +27,13 @@ cmake --build build
 ```
 
 Each binary reads its puzzle input from `data.txt` in the corresponding day folder and prints the answers for both parts.
+
+An easier way to do this from Visual Studio code is to use the `Code Runner` extension. Add the following line to the extension settings' **Executor Map**:
+
+```json
+"code-runner.executorMap": {
+    ...
+    "cpp": "cd $dir && clang++ -O2 -std=c++20 $fileName -o $fileNameWithoutExt -I/opt/homebrew/opt/openssl@3/include -L/opt/homebrew/opt/openssl@3/lib -lssl -lcrypto && ./$fileNameWithoutExt",
+    ...
+}
+```
